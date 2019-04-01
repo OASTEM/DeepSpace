@@ -53,29 +53,6 @@ public class Vision extends Subsystem {
     jevoisUSBCamera.setVideoMode(VideoMode.PixelFormat.kYUYV, 640, 480, 20);
   }
 
-  public void startAxisCamStream() {
-    m_axisCamThread = new Thread(() -> {
-      AxisCamera axisCamera = CameraServer.getInstance().addAxisCamera("axis-camera.local");
-      axisCamera.setResolution(640, 480);
-
-      CvSink cvSink = CameraServer.getInstance().getVideo();
-      CvSource cvSource = CameraServer.getInstance().putVideo("Rectangle", 640, 480);
-
-      Mat mat = new Mat();
-      while (!Thread.interrupted()) {
-        if (cvSink.grabFrame(mat) == 0) {
-          cvSource.notifyError(cvSink.getError());
-          continue;
-        }
-
-        cvSource.putFrame(mat);
-      }
-    });
-    
-    m_axisCamThread.setDaemon(true);
-    m_axisCamThread.start();
-  }
-
   public void initializeSerialPort(){
     try {
       System.out.println("1st Try");
@@ -138,11 +115,11 @@ public class Vision extends Subsystem {
           centerX = (Double) jsonData.get("Target_Center_X");
           distance = (Double) jsonData.get("Distance");
           offsetAngle = (Double) jsonData.get("Angle");
-          
-          SmartDashboard.putNumber("CenterX: ", centerX);
-          SmartDashboard.putNumber("Distance: ", distance);
-          SmartDashboard.putNumber("Offset Angle: ", offsetAngle);
         }
+
+        SmartDashboard.putNumber("CenterX: ", centerX);
+        SmartDashboard.putNumber("Distance: ", distance);
+        SmartDashboard.putNumber("Offset Angle: ", offsetAngle);
       }
 
     } catch (Exception e) {

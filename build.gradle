@@ -1,6 +1,6 @@
 plugins {
     id "java"
-    id "edu.wpi.first.GradleRIO" version "2019.2.1"
+    id "edu.wpi.first.GradleRIO" version "2019.4.1"
 }
 
 def ROBOT_MAIN_CLASS = "org.usfirst.frc4079.DeepSpace.Main"
@@ -42,7 +42,7 @@ repositories {
     mavenCentral()
 }
 
-//repositories {
+// repositories {
 //   flatDir {
 //       dirs 'libs'
 //   }
@@ -53,7 +53,7 @@ repositories {
 dependencies {
     compile 'org.json:json:20180813'
     compile 'com.googlecode.json-simple:json-simple:1.1.1'
-    // compile name: 'json-simple-1.1.1'
+	// compile name: 'json-simple-1.1.1'
     compile wpi.deps.wpilib()
     compile wpi.deps.vendor.java()
     nativeZip wpi.deps.vendor.jni(wpi.platforms.roborio)

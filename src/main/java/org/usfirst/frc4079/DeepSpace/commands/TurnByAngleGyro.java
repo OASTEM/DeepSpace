@@ -8,20 +8,14 @@
 package org.usfirst.frc4079.DeepSpace.commands;
 
 import org.usfirst.frc4079.DeepSpace.Robot;
-import com.kauailabs.navx.frc.AHRS;
 
-import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.SPI.Port;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
-
 
 public class TurnByAngleGyro extends Command {
 
   double goalAngle;
   double error;
-  double error2;
 
   public TurnByAngleGyro(double goalAngle, double duration) {
     // Use requires() here to declare subsystem dependencies
@@ -29,8 +23,6 @@ public class TurnByAngleGyro extends Command {
     requires(Robot.drivetrain);
 
     this.goalAngle = goalAngle;
-    error = goalAngle;
-    error2 = goalAngle;
 
     setTimeout(duration);
   }
@@ -44,16 +36,16 @@ public class TurnByAngleGyro extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    error = goalAngle - (Robot.drivetrain.getAngle());
-    double p = (error/Math.abs(goalAngle)) * .9;
+    error = goalAngle - Robot.drivetrain.getAngle();
+    double p = (error / Math.abs(goalAngle) * .35);
 
-    if (p > .25) {
-      p = .25;
+    if (p > .175) {
+      p = .175;
     }
-    else if (p < -.25) {
-      p = -.25;
+    else if (p < -.175) {
+      p = -.175;
     }
-
+    
     Robot.drivetrain.drivePercentOutput(p, p);
   }
 
@@ -61,13 +53,10 @@ public class TurnByAngleGyro extends Command {
   @Override
   protected boolean isFinished() {
     SmartDashboard.putNumber("ERROR", error);
-    error2 = Math.abs(goalAngle) - Math.abs(Robot.drivetrain.getAngle());
 
-    if (Math.abs(error2) <= 0.25) {
+    if (Math.abs(error) <= 0.3) {
       return true;
     }
-
-    SmartDashboard.putBoolean("Calibration", Robot.drivetrain.navX.isCalibrating());
 
     return isTimedOut();
   }

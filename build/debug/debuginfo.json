@@ -1,0 +1,30 @@
+[
+  {
+    "artifact": "frcJava (in project DeepSpace)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "DeepSpace",
+    "language": "java"
+  },
+  {
+    "artifact": "frcJava (in project DeepSpace2019_Merged)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "DeepSpace2019_Merged",
+    "language": "java"
+  },
+  {
+    "artifact": "frcJava (in project DeepSpaceWorlds)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "DeepSpaceWorlds",
+    "language": "java"
+  },
+  {
+    "artifact": "frcJava (in project TheRealDeepSpace)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "TheRealDeepSpace",
+    "language": "java"
+  }
+]
