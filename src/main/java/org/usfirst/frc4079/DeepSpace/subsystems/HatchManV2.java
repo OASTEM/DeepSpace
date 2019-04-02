@@ -51,12 +51,12 @@ public class HatchManV2 extends Subsystem {
   }
 
   public boolean getTopLimitSwitch() {
-    SmartDashboard.putBoolean("Hatch Top Limit Switch", topLimitSwitch.get());
+    //SmartDashboard.putBoolean("Hatch Top Limit Switch", topLimitSwitch.get());
     return topLimitSwitch.get();
   }
 
   public boolean getBotLimitSwitch() {
-    SmartDashboard.putBoolean("Hatch Bottom Limit Switch", botLimitSwitch.get());
+    //SmartDashboard.putBoolean("Hatch Bottom Limit Switch", botLimitSwitch.get());
     return botLimitSwitch.get();
   }
 }

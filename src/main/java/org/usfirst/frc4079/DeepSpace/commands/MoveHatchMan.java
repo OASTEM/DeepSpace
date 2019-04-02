@@ -17,6 +17,7 @@ public class MoveHatchMan extends Command {
   private HatchManV2 hatchManV2;
   private int position;
 
+  // position : 0 indicates deploying, 1 indicates retracting
   public MoveHatchMan(int position, double timeout) {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
