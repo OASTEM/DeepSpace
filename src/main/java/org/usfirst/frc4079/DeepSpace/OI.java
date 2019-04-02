@@ -119,10 +119,10 @@ public class OI {
         payloadButtonB.whileHeld(new PullBackLeg(2.5));
 
         payloadButtonX = new JoystickButton(payloadPad, 3);
-        payloadButtonX.whenPressed(new MoveHatchMan(0, 0.05));
+        payloadButtonX.whileHeld(new MoveHatchMan(0, 0.5));
 
         payloadButtonY = new JoystickButton(payloadPad, 4);
-        payloadButtonY.whenPressed(new MoveHatchMan(1, 0.05));
+        payloadButtonY.whileHeld(new MoveHatchMan(1, 0.5));
 
         payloadLeftBumper = new JoystickButton(payloadPad, 5);
         payloadLeftBumper.whileHeld(new PushBothLegs(2.5));

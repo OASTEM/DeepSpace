@@ -34,7 +34,7 @@ public class MoveHatchMan extends Command {
     if(position == 0){
       hatchManV2.push();
     }
-    else{
+    else if(position == 1){
       hatchManV2.pull();
     }
   }
@@ -50,12 +50,12 @@ public class MoveHatchMan extends Command {
     if(isTimedOut()){
       return true;
     }
-    /*else if(hatchManV2.getTopLimitSwitch()){
+    else if(position == 0 && !hatchManV2.getTopLimitSwitch()){
       return true;
     }
-    else if(hatchManV2.getBotLimitSwitch()){
+    else if(position == 1 && !hatchManV2.getBotLimitSwitch()){
       return true;
-    } */
+    } 
     return false;
   }
 

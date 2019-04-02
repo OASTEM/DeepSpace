@@ -12,6 +12,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * Add your docs here.
@@ -27,8 +28,8 @@ public class HatchManV2 extends Subsystem {
 
   public HatchManV2() {
     finger = new TalonSRX(4);
-    //topLimitSwitch = new DigitalInput(0);
-    //botLimitSwitch = new DigitalInput(1);
+    topLimitSwitch = new DigitalInput(0);   
+    botLimitSwitch = new DigitalInput(1);
   }
 
   @Override
@@ -38,7 +39,7 @@ public class HatchManV2 extends Subsystem {
   }
 
   public void push() {
-    finger.set(ControlMode.PercentOutput, 0.5);
+    finger.set(ControlMode.PercentOutput, 0.4);
   }
 
   public void pull() {
@@ -50,10 +51,12 @@ public class HatchManV2 extends Subsystem {
   }
 
   public boolean getTopLimitSwitch() {
+    SmartDashboard.putBoolean("Hatch Top Limit Switch", topLimitSwitch.get());
     return topLimitSwitch.get();
   }
 
   public boolean getBotLimitSwitch() {
+    SmartDashboard.putBoolean("Hatch Bottom Limit Switch", botLimitSwitch.get());
     return botLimitSwitch.get();
   }
 }
