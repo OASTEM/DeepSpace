@@ -66,6 +66,7 @@ public class DriveDistanceVision extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+        
         if (Robot.getDistance() != -1) {
             double centerX = Robot.getCenterX();
             double deltaX = Constants.cameraCenter - centerX;
@@ -75,8 +76,13 @@ public class DriveDistanceVision extends Command {
             double visionKRight = -(Constants.kTargetDistanceKp * (Robot.getDistance() - subtraction)) - (Constants.kTargetDeltaXKp * deltaX);        
             double visionKLeft = (Constants.kTargetDistanceKp * (Robot.getDistance() - subtraction)) - (Constants.kTargetDeltaXKp * deltaX);
 
+            SmartDashboard.putNumber("Left Vision K:", visionKLeft);
+            SmartDashboard.putNumber("Right Vision K:", visionKRight);
+
             Robot.drivetrain.drivePercentOutput(visionKLeft, visionKRight);
         } else {
+            SmartDashboard.putNumber("Left Vision K:", 0);
+            SmartDashboard.putNumber("Right Vision K:", 0);
             Robot.drivetrain.drivePercentOutput(0, 0);
         }
     }
