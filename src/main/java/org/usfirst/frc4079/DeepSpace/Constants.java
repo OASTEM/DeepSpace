@@ -51,9 +51,9 @@ public class Constants {
 
     //Auto drive constants
     public static final int cameraCenter = 320;
-    public static final double maxAutoError = 2.5;
-    public static double kTargetDistanceKp = 0.007; // 0.0065 for 2019, 
-    public static double kTargetDeltaXKp = 0.0008; // 0.00075 for 2019, 
+    public static final double maxAutoError = 1.5;
+    public static double kTargetDistanceKp = 0.006; // 0.0065 for 2019, 0.006 for 2018
+    public static double kTargetDeltaXKp = 0.0008; // 0.00075 for 2019, 0.008 for 2018
 
-    public static final double cameraToFront = 27; // 8 + 1 for 2019, 26 for 2018
+    public static final double cameraToFront = 26; // 8 + 1 for 2019, 26 for 2018
 }
