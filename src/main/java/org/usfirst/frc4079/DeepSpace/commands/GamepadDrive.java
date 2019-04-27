@@ -45,7 +45,8 @@ public class GamepadDrive extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-            Robot.drivetrain.drivePercentOutput(-Robot.oi.drivePad.getLeftAnalogY()*Constants.kMaxDrivePower, Robot.oi.drivePad.getRightAnalogY()*Constants.kMaxDrivePower);
+            //Robot.drivetrain.drivePercentOutput(-Robot.oi.drivePad.getLeftAnalogY()*Constants.kMaxDrivePower, Robot.oi.drivePad.getRightAnalogY()*Constants.kMaxDrivePower);
+            Robot.drivetrain.drivePercentOutput(-Robot.oi.left.getY()*Constants.kMaxDrivePower, Robot.oi.right.getY()*Constants.kMaxDrivePower);
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -8,12 +8,12 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 package org.usfirst.frc4079.DeepSpace;
 
 import org.usfirst.frc4079.DeepSpace.commands.*;
 import org.usfirst.frc4079.DeepSpace.Constants;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 
@@ -57,6 +57,9 @@ public class OI {
     public LogitechGamingPad drivePad;
     public LogitechGamingPad payloadPad;
 
+    public Joystick left;
+    public Joystick right;
+
     public JoystickButton driveButtonA;
     public JoystickButton driveButtonB;
     public JoystickButton driveButtonX;
@@ -87,6 +90,9 @@ public class OI {
         
         drivePad = new LogitechGamingPad(0);
         payloadPad = new LogitechGamingPad(1);
+
+        left = new Joystick(0);
+        right = mew Joystick(1);
 
         // DRIVE CONTROLLER
 
