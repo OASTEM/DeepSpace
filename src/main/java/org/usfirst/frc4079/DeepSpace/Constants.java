@@ -1,7 +1,7 @@
 package org.usfirst.frc4079.DeepSpace;
 
 public class Constants {
-    public static double kMaxDrivePower=1.0;
+    public static double kMaxDrivePower=0.1;
 
     public static int kLiftState=12;
     public static double kLiftDuration=1;

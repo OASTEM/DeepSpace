@@ -92,7 +92,7 @@ public class OI {
         payloadPad = new LogitechGamingPad(1);
 
         left = new Joystick(0);
-        right = mew Joystick(1);
+        right = new Joystick(1);
 
         // DRIVE CONTROLLER
 

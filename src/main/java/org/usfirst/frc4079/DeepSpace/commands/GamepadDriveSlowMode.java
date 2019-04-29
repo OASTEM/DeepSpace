@@ -29,7 +29,7 @@ public class GamepadDriveSlowMode extends Command {
     @Override
     protected void execute() {
             //Robot.drivetrain.drivePercentOutput((-Robot.oi.drivePad.getLeftAnalogY()*Constants.kMaxDrivePower)/2, (Robot.oi.drivePad.getRightAnalogY()*Constants.kMaxDrivePower)/2);
-            Robot.drivetrain.drivePercentOutput(-Robot.oi.left.getY()*Constants.kMaxDrivePower*0.5, Robot.oi.right.getY()*Constants.kMaxDrivePower*0.5);
+            Robot.drivetrain.drivePercentOutput(-Robot.oi.left.getY()*Constants.kMaxDrivePower*0.25, Robot.oi.right.getY()*Constants.kMaxDrivePower*0.25);
     }
 
     // Make this return true when this Command no longer needs to run execute()
