@@ -60,6 +60,7 @@ public class DriveDistanceVision extends Command {
         setTimeout(timeout);
       } else {
         targetNotVisible = true;
+        //setTimeout(0.1);
       }
     }
 
@@ -68,7 +69,7 @@ public class DriveDistanceVision extends Command {
     protected void execute() {
         if (Robot.getDistance() != -1) {
             double centerX = Robot.getCenterX();
-            double deltaX = Constants.cameraCenter - centerX;
+            double deltaX = Constants.cameraCenter + 50 - centerX;
 
             SmartDashboard.putNumber("Delta X", deltaX);
 
@@ -89,12 +90,10 @@ public class DriveDistanceVision extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        /*
-        if (targetNotVisible) {
-            SmartDashboard.putBoolean("Target Not Visible: ", true);
+        
+        if (Robot.getDistance() <= 25) {
             return true;
-        } SmartDashboard.putBoolean("Target Not Visible: ", false);
-        */
+        }
         
         if (Math.abs(Robot.oi.drivePad.getLeftAnalogY()) > 0.25 || Math.abs(Robot.oi.drivePad.getRightAnalogY()) > 0.25) {
             SmartDashboard.putBoolean("Manual Override: ", true);

@@ -91,17 +91,17 @@ public class OI {
         // DRIVE CONTROLLER
 
         driveButtonA = new JoystickButton(drivePad, 1);
-        driveButtonA.whenPressed(new DriveDistanceVision(Constants.cameraToFront, 1, 10));
+        driveButtonA.whenPressed(new DriveToTargets());
 
         driveButtonB = new JoystickButton(drivePad, 2);
-        driveButtonB.whenPressed(new DriveDistance(50, 2));
+        //driveButtonB.whenPressed(new DriveDistance(50, 2));
 
         driveButtonY = new JoystickButton(drivePad, 4);
-        driveButtonY.whenPressed(new GamepadDriveSlowMode());
 
         driveButtonX = new JoystickButton(drivePad, 3);
 
         driveLeftBumper = new JoystickButton(drivePad, 5);
+        driveLeftBumper.whenPressed(new GamepadDriveSlowMode());
 
         driveRightBumper = new JoystickButton(drivePad, 6);
         driveRightBumper.whenPressed(new GamepadDrive());
@@ -109,20 +109,20 @@ public class OI {
         driveButtonBack = new JoystickButton(drivePad, 7);
 
         driveButtonStart = new JoystickButton(drivePad, 8);
+        driveButtonStart.whenPressed(new SelfTest());
 
         // PAYLOAD CONTROLLER
 
         payloadButtonA = new JoystickButton(payloadPad, 1);
-        payloadButtonA.whenPressed(new DisableClimber());
 
         payloadButtonB = new JoystickButton(payloadPad, 2);
         payloadButtonB.whileHeld(new PullBackLeg(2.5));
 
         payloadButtonX = new JoystickButton(payloadPad, 3);
-        payloadButtonX.whenPressed(new MoveHatchMan(0, 2));
+        payloadButtonX.whenPressed(new MoveHatchMan(0, 0.5));
 
         payloadButtonY = new JoystickButton(payloadPad, 4);
-        payloadButtonY.whenPressed(new MoveHatchMan(1, 2));
+        payloadButtonY.whenPressed(new MoveHatchMan(1, 1.5));
 
         payloadLeftBumper = new JoystickButton(payloadPad, 5);
         payloadLeftBumper.whileHeld(new PushBothLegs(2.5));
@@ -130,6 +130,7 @@ public class OI {
         payloadRightBumper = new JoystickButton(payloadPad, 6);
 
         payloadButtonBack = new JoystickButton(payloadPad, 7);
+        payloadButtonBack.whenPressed(new DisableClimber());
 
         payloadButtonStart = new JoystickButton(payloadPad, 8);
         payloadButtonStart.whenPressed(new GamepadRunClimber());

@@ -9,24 +9,24 @@ public class Constants {
     public static int kShooterState=1;
 	/* ROBOT PHYSICAL CONSTANTS */
     // Encoder
-    public static double kSensorUnitsPerRotation = 585; //4096 for 2019, 585 for 2018
+    public static double kSensorUnitsPerRotation = 4096; //4096 for 2019, 585 for 2018
     //public static double kSensorUnitsPerRotation = 4096;
     // Sensor units per one rotation of the wheel shaft
 
     // Wheels
     public static double kDriveWheelDiameterInches = 6.0;
-    public static double kTrackWidthInches = 23.75;
-   // public static double kTrackWidthInches = 21.75;
+    //public static double kTrackWidthInches = 23.75;
+    public static double kTrackWidthInches = 21.75;
     
     public static int kSlotStraight = 0;
-    public static double kDriveStraightKp = 0.4;
+    public static double kDriveStraightKp = 0.1;  //0.4 for 2018, 0.1 for 2019
     public static double kDriveStraightKi = 0.0;
     public static double kDriveStraightKd = 0.0;
-    public static double kDriveStraightKf = 1.6;
+    public static double kDriveStraightKf = 0.4;  //1.6 for 2018, 0.4 for 2019
     public static int kDriveStraightIZone = 100;
     public static double kDriveStraightPeakOutput = 1;
-    public static int kDriveStraightCruiseVelocity = 500;
-    public static int kDriveStraightAcceleration = 2500;
+    public static int kDriveStraightCruiseVelocity = 5000;
+    public static int kDriveStraightAcceleration = 25000;
 
     public static int kSlotTurn =1;
     public static double kDriveTurnKp = 2.0;
@@ -52,8 +52,7 @@ public class Constants {
     //Auto drive constants
     public static final int cameraCenter = 320;
     public static final double maxAutoError = 1.5;
-    public static double kTargetDistanceKp = 0.006; // 0.0065 for 2019, 0.006 for 2018
-    public static double kTargetDeltaXKp = 0.0008; // 0.00075 for 2019, 0.008 for 2018
-
-    public static final double cameraToFront = 26; // 8 + 1 for 2019, 26 for 2018
+    public static double kTargetDistanceKp = 0.0065; // 0.0065 for 2019, 0.006 for 2018
+    public static double kTargetDeltaXKp = 0.00075; // 0.00075 for 2019, 0.008 for 2018
+    public static final double cameraToFront = 8 + 1; // 8 + 1 for 2019, 26 for 2018
 }

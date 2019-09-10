@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import org.usfirst.frc4079.DeepSpace.Robot;
 
 /**
- *
+ * OLD HATCH MAN CODE
  */
 public class MoveHatchFinger extends Command {
       private double position;

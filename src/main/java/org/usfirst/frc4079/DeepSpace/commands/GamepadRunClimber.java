@@ -11,6 +11,8 @@
 
 package org.usfirst.frc4079.DeepSpace.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc4079.DeepSpace.Robot;
 
 /**
@@ -57,6 +59,8 @@ public class GamepadRunClimber extends Command {
             Robot.climber.runBackLeg(0);
         }
         Robot.climber.drive(Robot.oi.payloadPad.getRightTriggerValue()-Robot.oi.payloadPad.getLeftTriggerValue(), -Robot.oi.payloadPad.getRightTriggerValue()+Robot.oi.payloadPad.getLeftTriggerValue());
+        //SmartDashboard.putNumber("Right Trigger", Robot.oi.payloadPad.getRightTriggerValue());
+        //SmartDashboard.putNumber("Left Trigger", Robot.oi.payloadPad.getLeftTriggerValue());
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -94,7 +94,8 @@ public class Robot extends TimedRobot {
         offsetAngle = vision.getOffsetAngle();
         boolean isTargetVisible = (distance != -1);
         SmartDashboard.putBoolean("Vision Targets Detected", isTargetVisible);
-
+        hatchManV2.getTopLimitSwitch(); //Outputs values of limit switches to Shuffleboard
+        hatchManV2.getBotLimitSwitch();
       //  SmartDashboard.putNumber("Distance", distance);
     }
 
