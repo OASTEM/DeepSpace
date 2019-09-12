@@ -62,5 +62,6 @@ public class HatchManV2 extends Subsystem {
 
   public void getHatchManVoltage() {
     System.out.println("Finger: " + finger.getMotorOutputVoltage());
+    //return finger.getMotorOutputPercent();
   }
 }

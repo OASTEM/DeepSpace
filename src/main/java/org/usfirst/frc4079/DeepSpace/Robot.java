@@ -160,6 +160,8 @@ public class Robot extends TimedRobot {
         Scheduler.getInstance().run();
         drivetrain.outputToSmartDashboard();
        // System.out.println(jevoisCam.getTx());
+       Robot.climber.getFrontEncoderCounts();
+       Robot.climber.getBackEncoderCounts();
     }
 
     public static double getOffsetAngle() {

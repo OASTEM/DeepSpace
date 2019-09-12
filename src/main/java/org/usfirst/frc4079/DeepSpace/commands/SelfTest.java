@@ -10,8 +10,7 @@ package org.usfirst.frc4079.DeepSpace.commands;
 import org.usfirst.frc4079.DeepSpace.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.shuffleboard.*;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 
 public class SelfTest extends Command {
 
@@ -33,6 +32,9 @@ private double frontLeftVoltage;
     Robot.drivetrain.getDrivetrainVoltage();
     Robot.hatchManV2.getHatchManVoltage();
     Robot.climber.getBackDriveVoltage();
+    //Shuffleboard.getTab("SelfTest").add("DriveTrain Voltage", Robot.drivetrain.getDrivetrainVoltage());
+    //Shuffleboard.getTab("SelfTest").add("HatchMan Voltage", Robot.hatchManV2.getHatchManVoltage());
+    //Shuffleboard.getTab("SelfTest").add("BackDrive Voltage", Robot.climber.getBackDriveVoltage());
   }
 
   // Make this return true when this Command no longer needs to run execute()

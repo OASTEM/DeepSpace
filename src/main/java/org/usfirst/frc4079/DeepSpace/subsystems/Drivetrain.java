@@ -305,18 +305,22 @@ public class Drivetrain extends Subsystem implements PIDOutput {
 		double l2 = leftSlave.getMotorOutputVoltage();
 		double r2 = rightSlave.getMotorOutputVoltage();
 		if (l1 < .6) {
-			System.out.println("Left Master Broken");	
+			System.out.println("Left Master Broken");
+			//return "Left Master Broken"	;
 		}
 		else if (l2 < .6) {
-			System.out.println("Left Slave Broken");	
+			System.out.println("Left Slave Broken");
+			//return "Left Slave Broken";	
 		}
 		else if (r1 < .6) {
 			System.out.println("Right Master Broken");	
+			//return "Right Master Broken";
 		}
 		else if (r2 < .6) {
 			System.out.println("Right Slave Broken");	
+			//return "Right Slave Broken";
 		}
-		else System.out.println("Drive Talons Fine");
+		else System.out.println("Drive Talons Fine");//return "Drive Talons Fine";  
 	}
 
 }
