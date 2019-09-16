@@ -10,10 +10,8 @@
 
 package org.usfirst.frc4079.DeepSpace.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.InstantCommand;
 
-import org.usfirst.frc4079.DeepSpace.Robot;
 import org.usfirst.frc4079.DeepSpace.Constants;
 
 
