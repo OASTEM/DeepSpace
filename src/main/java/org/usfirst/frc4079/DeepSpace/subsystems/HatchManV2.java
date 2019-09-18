@@ -60,8 +60,8 @@ public class HatchManV2 extends Subsystem {
     return botLimitSwitch.get();
   }
 
-  public void getHatchManVoltage() {
-    System.out.println("Finger: " + finger.getMotorOutputVoltage());
-    //return finger.getMotorOutputPercent();
+  public double getHatchManVoltage() {
+    //System.out.println("Finger: " + finger.getMotorOutputVoltage());
+    return finger.getMotorOutputPercent();
   }
 }

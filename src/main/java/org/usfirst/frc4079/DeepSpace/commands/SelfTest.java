@@ -9,12 +9,18 @@ package org.usfirst.frc4079.DeepSpace.commands;
 
 import org.usfirst.frc4079.DeepSpace.Robot;
 
+import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 
 public class SelfTest extends Command {
 
-private double frontLeftVoltage;
+  private ShuffleboardTab selfTest;
+  private NetworkTableEntry driveTrainVoltage;
+  private NetworkTableEntry hatchManVoltage;
+  private NetworkTableEntry backDriveVoltage;
+
   public SelfTest() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -23,18 +29,21 @@ private double frontLeftVoltage;
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    frontLeftVoltage = 0.0;
+    selfTest = Shuffleboard.getTab("SelfTest");
+    driveTrainVoltage = selfTest.add("DriveTrain Voltage", 0.0).getEntry();
+    hatchManVoltage = selfTest.add("HatchMan Voltage", 0.0).getEntry();
+    backDriveVoltage = selfTest.add("BackDrive Voltage", 0.0).getEntry();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.drivetrain.getDrivetrainVoltage();
-    Robot.hatchManV2.getHatchManVoltage();
-    Robot.climber.getBackDriveVoltage();
-    //Shuffleboard.getTab("SelfTest").add("DriveTrain Voltage", Robot.drivetrain.getDrivetrainVoltage());
-    //Shuffleboard.getTab("SelfTest").add("HatchMan Voltage", Robot.hatchManV2.getHatchManVoltage());
-    //Shuffleboard.getTab("SelfTest").add("BackDrive Voltage", Robot.climber.getBackDriveVoltage());
+    driveTrainVoltage.setString(Robot.drivetrain.getDrivetrainVoltage());
+    hatchManVoltage.setDouble(Robot.hatchManV2.getHatchManVoltage());
+    backDriveVoltage.setDouble(Robot.climber.getBackDriveVoltage());
+    //Robot.drivetrain.getDrivetrainVoltage();
+    //Robot.hatchManV2.getHatchManVoltage();
+    //Robot.climber.getBackDriveVoltage();
   }
 
   // Make this return true when this Command no longer needs to run execute()
