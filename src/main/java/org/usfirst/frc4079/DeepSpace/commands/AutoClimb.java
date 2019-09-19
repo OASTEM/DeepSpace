@@ -30,11 +30,11 @@ public class AutoClimb extends CommandGroup {
     // e.g. if Command1 requires chassis, and Command2 requires arm,
     // a CommandGroup containing them would require both the chassis and the
     // arm.
-    addSequential(new PushBothLegs(1));
+    addSequential(new PushBothLegs(.9));
     addSequential(new BackLegDrive(1));
-    addSequential(new PullFrontLeg(1));
-    addSequential(new BackLegDrive(1));
-    addSequential(new PullBackLeg(1));
+    addSequential(new PullFrontLeg(.9));
+    addSequential(new BackLegDrive(1.2));
+    addSequential(new PullBackLeg(.9));
     
   }
 }

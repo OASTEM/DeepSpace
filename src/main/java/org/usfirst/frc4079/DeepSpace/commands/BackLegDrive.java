@@ -31,7 +31,7 @@ public class BackLegDrive extends Command {
   @Override
   protected void execute() {
     //do i need to invert any of them?
-    Robot.climber.drive(0.5, 0.5);
+    Robot.climber.drive(0.5, -0.5);
   }
 
   // Make this return true when this Command no longer needs to run execute()

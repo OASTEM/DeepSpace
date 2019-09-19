@@ -298,33 +298,36 @@ public class Drivetrain extends Subsystem implements PIDOutput {
         return turnController;
 	}
 
-	public String getDrivetrainVoltage() {
-		//drivePercentOutput(.25, .25);
-		double l1 = leftMaster.getMotorOutputVoltage();
-		double r1 = rightMaster.getMotorOutputVoltage();
-		double l2 = leftSlave.getMotorOutputVoltage();
-		double r2 = rightSlave.getMotorOutputVoltage();
-		if (l1 < .6) {
-			//System.out.println("Left Master Broken");
-			return "Left Master Broken"	;
-		}
-		else if (l2 < .6) {
-			//System.out.println("Left Slave Broken");
-			return "Left Slave Broken";	
-		}
-		else if (r1 < .6) {
-			//System.out.println("Right Master Broken");	
-			return "Right Master Broken";
-		}
-		else if (r2 < .6) {
-			//System.out.println("Right Slave Broken");	
-			return "Right Slave Broken";
-		}
-		else {
-			//System.out.println("Drive Talons Fine");
-			return "Drive Talons Fine";  
-		}
+	public double getLeftMasterVoltage() {
+		return leftMaster.getMotorOutputVoltage();
 	}
 
+	public double getLeftSlaveVoltage() {
+		return leftSlave.getMotorOutputVoltage();
+	}
+
+	public double getRightMasterVoltage() {
+		return rightMaster.getMotorOutputVoltage();
+	}
+
+	public double getRightSlaveVoltage() {
+		return rightSlave.getMotorOutputVoltage();
+	}
+
+	public boolean getLeftMaster() {
+		return (leftMaster.getMotorOutputVoltage() > .6);
+	}
+
+	public boolean getLeftSlave() {
+		return (leftSlave.getMotorOutputVoltage() > .6);
+	}
+
+	public boolean getRightMaster() {
+		return (rightMaster.getMotorOutputVoltage() > .6);
+	}
+
+	public boolean getRightSlave() {
+		return (rightSlave.getMotorOutputVoltage() > .6);
+	}
 }
 

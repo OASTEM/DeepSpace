@@ -17,9 +17,12 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 public class SelfTest extends Command {
 
   private ShuffleboardTab selfTest;
-  private NetworkTableEntry driveTrainVoltage;
   private NetworkTableEntry hatchManVoltage;
   private NetworkTableEntry backDriveVoltage;
+  private NetworkTableEntry leftMasterVoltage;
+  private NetworkTableEntry rightMasterVoltage;
+  private NetworkTableEntry leftSlaveVoltage;
+  private NetworkTableEntry rightSlaveVoltage;
 
   public SelfTest() {
     // Use requires() here to declare subsystem dependencies
@@ -30,20 +33,24 @@ public class SelfTest extends Command {
   @Override
   protected void initialize() {
     selfTest = Shuffleboard.getTab("SelfTest");
-    driveTrainVoltage = selfTest.add("DriveTrain Voltage", 0.0).getEntry();
     hatchManVoltage = selfTest.add("HatchMan Voltage", 0.0).getEntry();
     backDriveVoltage = selfTest.add("BackDrive Voltage", 0.0).getEntry();
+    rightMasterVoltage = selfTest.add("RightMaster Voltage", false).getEntry();
+    leftMasterVoltage = selfTest.add("LeftMaster Voltage", false).getEntry();
+    rightSlaveVoltage = selfTest.add("RightSlave Voltage", false).getEntry();
+    leftSlaveVoltage = selfTest.add("LeftSlave Voltage", false).getEntry();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    driveTrainVoltage.setString(Robot.drivetrain.getDrivetrainVoltage());
+    //Robot.drivetrain.drivePercentOutput(0.05, 0.05);
     hatchManVoltage.setDouble(Robot.hatchManV2.getHatchManVoltage());
     backDriveVoltage.setDouble(Robot.climber.getBackDriveVoltage());
-    //Robot.drivetrain.getDrivetrainVoltage();
-    //Robot.hatchManV2.getHatchManVoltage();
-    //Robot.climber.getBackDriveVoltage();
+    rightMasterVoltage.setBoolean(Robot.drivetrain.getRightMaster());
+    leftMasterVoltage.setBoolean(Robot.drivetrain.getLeftMaster());
+    rightSlaveVoltage.setBoolean(Robot.drivetrain.getRightSlave());
+    leftSlaveVoltage.setBoolean(Robot.drivetrain.getLeftSlave());
   }
 
   // Make this return true when this Command no longer needs to run execute()
