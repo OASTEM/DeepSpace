@@ -299,19 +299,19 @@ public class Drivetrain extends Subsystem implements PIDOutput {
 	}
 
 	public double getLeftMasterVoltage() {
-		return leftMaster.getMotorOutputVoltage();
+		return leftMaster.getOutputCurrent();
 	}
 
 	public double getLeftSlaveVoltage() {
-		return leftSlave.getMotorOutputVoltage();
+		return leftSlave.getOutputCurrent();
 	}
 
 	public double getRightMasterVoltage() {
-		return rightMaster.getMotorOutputVoltage();
+		return rightMaster.getOutputCurrent();
 	}
 
 	public double getRightSlaveVoltage() {
-		return rightSlave.getMotorOutputVoltage();
+		return rightSlave.getOutputCurrent();
 	}
 
 	public boolean getLeftMaster() {
