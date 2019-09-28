@@ -55,8 +55,8 @@ public class SelfTest extends Command {
     leftMasterVoltage.setBoolean(Robot.drivetrain.getLeftMaster());
     rightSlaveVoltage.setBoolean(Robot.drivetrain.getRightSlave());
     leftSlaveVoltage.setBoolean(Robot.drivetrain.getLeftSlave());
-    leftEncoders.setDouble(Robot.drivetrain);
-    
+    leftEncoders.setDouble(Robot.drivetrain.getLeftEncoderCounts());
+    rightEncoders.setDouble(Robot.drivetrain.getRightEncoderCounts());
   }
 
   // Make this return true when this Command no longer needs to run execute()
