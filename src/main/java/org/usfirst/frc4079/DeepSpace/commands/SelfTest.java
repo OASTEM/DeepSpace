@@ -49,7 +49,7 @@ public class SelfTest extends Command {
   @Override
   protected void execute() {
     //Robot.drivetrain.drivePercentOutput(0.05, 0.05);
-    hatchManVoltage.setDouble(Robot.hatchManV2.getHatchManVoltage());
+    hatchManVoltage.setDouble(Robot.hatchManV2.getHatchManCurrent());
     backDriveVoltage.setDouble(Robot.climber.getBackDriveVoltage());
     rightMasterVoltage.setBoolean(Robot.drivetrain.getRightMaster());
     leftMasterVoltage.setBoolean(Robot.drivetrain.getLeftMaster());

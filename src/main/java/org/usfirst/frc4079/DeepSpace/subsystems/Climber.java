@@ -134,7 +134,7 @@ public class Climber extends Subsystem {
     }
 
     public double getBackDriveVoltage(){
-        System.out.println("Left Drive: " + leftDrive.get() + " Right Drive: " + rightDrive.get());
+        //System.out.println("Left Drive: " + leftDrive.get() + " Right Drive: " + rightDrive.get());
         return leftDrive.get();
     }
 
