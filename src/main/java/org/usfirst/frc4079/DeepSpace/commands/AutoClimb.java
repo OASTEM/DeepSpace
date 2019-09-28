@@ -7,9 +7,14 @@
 
 package org.usfirst.frc4079.DeepSpace.commands;
 
+import org.usfirst.frc4079.DeepSpace.Robot;
+
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class AutoClimb extends CommandGroup {
+
+  public static boolean isDisabled;
+
   /**
    * Add your docs here.
    */
@@ -30,11 +35,14 @@ public class AutoClimb extends CommandGroup {
     // e.g. if Command1 requires chassis, and Command2 requires arm,
     // a CommandGroup containing them would require both the chassis and the
     // arm.
-    addSequential(new PushBothLegs(.9));
-    addSequential(new BackLegDrive(1));
-    addSequential(new PullFrontLeg(.9));
-    addSequential(new BackLegDrive(1.2));
-    addSequential(new PullBackLeg(.9));
+    isDisabled = false;
+    if(Robot.isEndgame || Robot.allowAutoClimb) {
+      addSequential(new PushBothLegs(.9));
+      addSequential(new BackLegDrive(1));
+      addSequential(new PullFrontLeg(.9));
+      addSequential(new BackLegDrive(1.2));
+      addSequential(new PullBackLeg(.9));
+    }
     
   }
 }

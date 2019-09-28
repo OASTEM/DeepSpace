@@ -23,6 +23,8 @@ public class SelfTest extends Command {
   private NetworkTableEntry rightMasterVoltage;
   private NetworkTableEntry leftSlaveVoltage;
   private NetworkTableEntry rightSlaveVoltage;
+  private NetworkTableEntry leftEncoders;
+  private NetworkTableEntry rightEncoders;
 
   public SelfTest() {
     // Use requires() here to declare subsystem dependencies
@@ -39,6 +41,8 @@ public class SelfTest extends Command {
     leftMasterVoltage = selfTest.add("LeftMaster Voltage", false).getEntry();
     rightSlaveVoltage = selfTest.add("RightSlave Voltage", false).getEntry();
     leftSlaveVoltage = selfTest.add("LeftSlave Voltage", false).getEntry();
+    leftEncoders = selfTest.add("Left Encoders", 0.0).getEntry();
+    rightEncoders = selfTest.add("Right Encoders", 0.0).getEntry();
   }
 
   // Called repeatedly when this Command is scheduled to run
@@ -51,6 +55,8 @@ public class SelfTest extends Command {
     leftMasterVoltage.setBoolean(Robot.drivetrain.getLeftMaster());
     rightSlaveVoltage.setBoolean(Robot.drivetrain.getRightSlave());
     leftSlaveVoltage.setBoolean(Robot.drivetrain.getLeftSlave());
+    leftEncoders.setDouble(Robot.drivetrain);
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()

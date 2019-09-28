@@ -44,14 +44,18 @@ public class PullBackLeg extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        Robot.climber.runBackLeg(-1.0);
-        Robot.climber.drive(1.0, -1.0);
+        if(AutoClimb.isDisabled) {
+
+        }
+        else {
+            Robot.climber.runBackLeg(-1.0);
+        }
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return isTimedOut();
+        return AutoClimb.isDisabled || isTimedOut();
     }
 
     // Called once after isFinished returns true
@@ -65,6 +69,7 @@ public class PullBackLeg extends Command {
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
+        AutoClimb.isDisabled = true;
     	end();
     }
 }

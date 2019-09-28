@@ -12,8 +12,6 @@
 package org.usfirst.frc4079.DeepSpace;
 
 import org.usfirst.frc4079.DeepSpace.commands.*;
-import org.usfirst.frc4079.DeepSpace.Constants;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 

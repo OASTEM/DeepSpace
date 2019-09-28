@@ -10,11 +10,6 @@ package org.usfirst.frc4079.DeepSpace.subsystems;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import org.opencv.core.Mat;
-
-import edu.wpi.cscore.AxisCamera;
-import edu.wpi.cscore.CvSink;
-import edu.wpi.cscore.CvSource;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.cscore.VideoMode;
 

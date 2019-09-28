@@ -12,9 +12,7 @@
 package org.usfirst.frc4079.DeepSpace.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
-import org.usfirst.frc4079.DeepSpace.subsystems.*;
 import org.usfirst.frc4079.DeepSpace.Constants;
-import org.usfirst.frc4079.DeepSpace.Robot;
 
 /**
  *

@@ -26,8 +26,6 @@ package org.usfirst.frc4079.DeepSpace.motion;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.*;
-
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Notifier;
 import com.ctre.phoenix.motion.*;
 //import com.ctre.phoenix.motion.TrajectoryPoint.TrajectoryDuration;
