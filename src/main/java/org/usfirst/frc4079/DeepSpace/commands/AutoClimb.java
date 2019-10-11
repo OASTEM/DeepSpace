@@ -18,7 +18,7 @@ public class AutoClimb extends CommandGroup {
   /**
    * Add your docs here.
    */
-  public AutoClimb() {
+  public AutoClimb(double pushTimeout) {
     // Add Commands here:
     // e.g. addSequential(new Command1());
     // addSequential(new Command2());
@@ -37,7 +37,9 @@ public class AutoClimb extends CommandGroup {
     // arm.
     isDisabled = false;
     if(Robot.isEndgame || Robot.allowAutoClimb) {
-      addSequential(new PushBothLegs(.9));
+      //Lvl 2 climb: .9
+      //Lvl 3 climb: ???
+      addSequential(new PushBothLegs(pushTimeout));
       addSequential(new BackLegDrive(1));
       addSequential(new PullFrontLeg(.9));
       addSequential(new BackLegDrive(1.2));

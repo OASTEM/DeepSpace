@@ -111,11 +111,13 @@ public class OI {
 
         // PAYLOAD CONTROLLER
 
+        //lvl 2 autoclimb
         payloadButtonA = new JoystickButton(payloadPad, 1);
-        payloadButtonA.whenPressed(new AutoClimb());
-        
+        payloadButtonA.whenPressed(new AutoClimb(0.9));
+
+        //lvl 3 autoclimb
         payloadButtonB = new JoystickButton(payloadPad, 2);
-        payloadButtonB.whileHeld(new PullBackLeg(2.5));
+        payloadButtonB.whileHeld(new AutoClimb(0.9));
 
         payloadButtonX = new JoystickButton(payloadPad, 3);
         payloadButtonX.whenPressed(new MoveHatchMan(0, 0.5));
