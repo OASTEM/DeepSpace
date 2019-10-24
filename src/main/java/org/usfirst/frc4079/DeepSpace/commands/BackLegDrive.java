@@ -30,18 +30,18 @@ public class BackLegDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if(AutoClimb.isDisabled) {
+    /*if(AutoClimb.isDisabled) {
 
     }
-    else {
+    else {*/
       Robot.climber.drive(0.5, -0.5);
-    }
+    //}
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return AutoClimb.isDisabled || isTimedOut();
+    return /*AutoClimb.isDisabled ||*/ isTimedOut();
   }
 
   // Called once after isFinished returns true
@@ -54,7 +54,7 @@ public class BackLegDrive extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    AutoClimb.isDisabled = true;
+    //AutoClimb.isDisabled = true;
     Robot.climber.drive(0.0, 0.0);
   }
 }

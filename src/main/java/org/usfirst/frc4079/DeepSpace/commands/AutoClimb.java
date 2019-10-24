@@ -13,7 +13,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class AutoClimb extends CommandGroup {
 
-  public static boolean isDisabled;
+  //public static boolean isDisabled;
 
   /**
    * Add your docs here.
@@ -35,16 +35,16 @@ public class AutoClimb extends CommandGroup {
     // e.g. if Command1 requires chassis, and Command2 requires arm,
     // a CommandGroup containing them would require both the chassis and the
     // arm.
-    isDisabled = false;
-    if(Robot.isEndgame || Robot.allowAutoClimb) {
+    //isDisabled = false;
+    //if(Robot.isEndgame || Robot.allowAutoClimb) {
       //Lvl 2 climb: .9
       //Lvl 3 climb: ???
       addSequential(new PushBothLegs(pushTimeout));
-      addSequential(new BackLegDrive(1));
+      addSequential(new BackLegDrive(1.5));
       addSequential(new PullFrontLeg(.9));
-      addSequential(new BackLegDrive(1.2));
+      addSequential(new BackLegDrive(2));
       addSequential(new PullBackLeg(.9));
-    }
+    //}
     
   }
 }

@@ -39,7 +39,11 @@ public class HatchManV2 extends Subsystem {
   }
 
   public void push() {
-    finger.set(ControlMode.PercentOutput, 0.4);
+    finger.set(ControlMode.PercentOutput, 0.3);
+  }
+
+  public void push(double power) {
+    finger.set(ControlMode.PercentOutput, 0.05);
   }
 
   public void pull() {
@@ -60,8 +64,8 @@ public class HatchManV2 extends Subsystem {
     return botLimitSwitch.get();
   }
 
-  public double getHatchManCurrent() {
-    //System.out.println("Finger: " + finger.getMotorOutputVoltage());
-    return finger.getOutputCurrent();
+  public boolean  getHatchManCurrent() {
+    System.out.println("Finger: " + finger.getOutputCurrent());
+    return finger.getOutputCurrent() >= 0.375;
   }
 }

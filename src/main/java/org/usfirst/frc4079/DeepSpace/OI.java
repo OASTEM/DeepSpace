@@ -120,10 +120,10 @@ public class OI {
         payloadButtonB.whileHeld(new AutoClimb(0.9));
 
         payloadButtonX = new JoystickButton(payloadPad, 3);
-        payloadButtonX.whenPressed(new MoveHatchMan(0, 0.5));
+        payloadButtonX.whenPressed(new MoveHatchMan(0, 0.55));
 
         payloadButtonY = new JoystickButton(payloadPad, 4);
-        payloadButtonY.whenPressed(new MoveHatchMan(1, 1.5));
+        payloadButtonY.whenPressed(new MoveHatchMan(1, 0.5));
 
         payloadLeftBumper = new JoystickButton(payloadPad, 5);
         payloadLeftBumper.whileHeld(new PushBothLegs(2.5));
@@ -146,6 +146,10 @@ public class OI {
     }
     public LogitechGamingPad getdrivePad() {
         return drivePad;
+    }
+
+    public void changeMode() {
+        
     }
 }
 

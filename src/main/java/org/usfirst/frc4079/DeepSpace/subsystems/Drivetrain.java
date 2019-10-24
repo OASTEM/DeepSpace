@@ -316,19 +316,22 @@ public class Drivetrain extends Subsystem implements PIDOutput {
 
 	public boolean getLeftMaster() {
 		System.out.println("Left Master: " + getLeftMasterCurrent());
-		return (leftMaster.getOutputCurrent() > .6);
+		return (leftMaster.getOutputCurrent() >= 0.25);
 	}
 
 	public boolean getLeftSlave() {
-		return (leftSlave.getOutputCurrent() > .6);
+		System.out.println("Left Slave: " + getLeftMasterCurrent());
+		return (leftSlave.getOutputCurrent() >= 0.25);
 	}
 
 	public boolean getRightMaster() {
-		return (rightMaster.getOutputCurrent() > .6);
+		System.out.println("Right Master: " + getLeftMasterCurrent());
+		return (rightMaster.getOutputCurrent() >= 0.25);
 	}
 
 	public boolean getRightSlave() {
-		return (rightSlave.getOutputCurrent() > .6);
+		System.out.println("Right Slave: " + getRightSlaveCurrent());
+		return (rightSlave.getOutputCurrent() >= 0.25);
 	}
 
 	public double getLeftEncoderCounts() {
